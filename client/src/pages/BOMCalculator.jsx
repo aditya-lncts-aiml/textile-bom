@@ -72,7 +72,7 @@ export default function BOMCalculator() {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/api/bom", bomData);
+      const res = await axios.post("https://textile-bom-server.onrender.com/api/bom", bomData);
       alert("BOM saved successfully!");
       console.log(res.data);
     } catch (error) {
