@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/textile-bom/static/css/main.c4952c42.css",
-    "main.js": "/textile-bom/static/js/main.eae0b0c0.js",
+    "main.css": "/textile-bom/static/css/main.8523618b.css",
+    "main.js": "/textile-bom/static/js/main.e0209890.js",
     "static/js/453.eb570f4f.chunk.js": "/textile-bom/static/js/453.eb570f4f.chunk.js",
     "index.html": "/textile-bom/index.html",
-    "main.c4952c42.css.map": "/textile-bom/static/css/main.c4952c42.css.map",
-    "main.eae0b0c0.js.map": "/textile-bom/static/js/main.eae0b0c0.js.map",
+    "main.8523618b.css.map": "/textile-bom/static/css/main.8523618b.css.map",
+    "main.e0209890.js.map": "/textile-bom/static/js/main.e0209890.js.map",
     "453.eb570f4f.chunk.js.map": "/textile-bom/static/js/453.eb570f4f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4952c42.css",
-    "static/js/main.eae0b0c0.js"
+    "static/css/main.8523618b.css",
+    "static/js/main.e0209890.js"
   ]
 }

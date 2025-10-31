@@ -1,36 +1,55 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function FabricCalculator() {
+export default function FabricCalculator({ onFabricChange, resetSignal }) {
   const [length, setLength] = useState(0);
   const [width, setWidth] = useState(0);
-  const [costPerMeter, setCostPerMeter] = useState(0);
-  const [result, setResult] = useState(null);
+  const [pricePerMeter, setPricePerMeter] = useState(0);
 
-  const calculate = () => {
-    const totalMeters = (length * width) / 10000;
-    const totalCost = totalMeters * costPerMeter;
-    const estimateMin = totalCost * 0.95;
-    const estimateMax = totalCost * 1.05;
-    setResult({ totalCost, estimateMin, estimateMax });
-  };
+  const totalCost = (length * width * pricePerMeter) / 100;
+
+  useEffect(() => {
+    onFabricChange(totalCost);
+  }, [totalCost, onFabricChange]);
+
+  // ✅ Reset inputs when resetSignal changes
+  useEffect(() => {
+    setLength(0);
+    setWidth(0);
+    setPricePerMeter(0);
+  }, [resetSignal]);
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white shadow-md rounded-2xl mt-8">
-      <input type="number" placeholder="Length (cm)" className="input"
-        onChange={e => setLength(e.target.value)} />
-      <input type="number" placeholder="Width (cm)" className="input"
-        onChange={e => setWidth(e.target.value)} />
-      <input type="number" placeholder="Cost per meter" className="input"
-        onChange={e => setCostPerMeter(e.target.value)} />
-      <button onClick={calculate} className="bg-blue-500 text-white px-4 py-2 mt-3 rounded-lg">
-        Calculate
-      </button>
-      {result && (
-        <div className="mt-4">
-          <p>Total Cost: ₹{result.totalCost.toFixed(2)}</p>
-          <p>Estimated Range: ₹{result.estimateMin.toFixed(2)} - ₹{result.estimateMax.toFixed(2)}</p>
-        </div>
-      )}
+    <div className="space-y-4 text-white">
+      <div>
+        <label className="block text-gray-400">Length (cm)</label>
+        <input
+          type="number"
+          value={length}
+          onChange={(e) => setLength(parseFloat(e.target.value))}
+          className="w-full p-2 rounded bg-gray-800 border border-gray-700"
+        />
+      </div>
+      <div>
+        <label className="block text-gray-400">Width (cm)</label>
+        <input
+          type="number"
+          value={width}
+          onChange={(e) => setWidth(parseFloat(e.target.value))}
+          className="w-full p-2 rounded bg-gray-800 border border-gray-700"
+        />
+      </div>
+      <div>
+        <label className="block text-gray-400">Price per meter (₹)</label>
+        <input
+          type="number"
+          value={pricePerMeter}
+          onChange={(e) => setPricePerMeter(parseFloat(e.target.value))}
+          className="w-full p-2 rounded bg-gray-800 border border-gray-700"
+        />
+      </div>
+      <div className="mt-4 text-cyan-400 font-semibold">
+        Total Fabric Cost: ₹{isNaN(totalCost.toFixed(2))?0.00:totalCost.toFixed(2)}
+      </div>
     </div>
   );
 }
