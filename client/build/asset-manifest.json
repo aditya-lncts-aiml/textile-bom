@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/textile-bom-calculator/static/css/main.2d4af4f7.css",
     "main.js": "/textile-bom-calculator/static/js/main.7d779ffd.js",
     "static/js/453.eb570f4f.chunk.js": "/textile-bom-calculator/static/js/453.eb570f4f.chunk.js",
@@ -11,5 +12,18 @@
   "entrypoints": [
     "static/css/main.2d4af4f7.css",
     "static/js/main.7d779ffd.js"
+=======
+    "main.css": "/textile-bom/static/css/main.3823b0fb.css",
+    "main.js": "/textile-bom/static/js/main.d1ad3897.js",
+    "static/js/453.eb570f4f.chunk.js": "/textile-bom/static/js/453.eb570f4f.chunk.js",
+    "index.html": "/textile-bom/index.html",
+    "main.3823b0fb.css.map": "/textile-bom/static/css/main.3823b0fb.css.map",
+    "main.d1ad3897.js.map": "/textile-bom/static/js/main.d1ad3897.js.map",
+    "453.eb570f4f.chunk.js.map": "/textile-bom/static/js/453.eb570f4f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3823b0fb.css",
+    "static/js/main.d1ad3897.js"
+>>>>>>> 9a4f9ed (final commit)
   ]
 }
